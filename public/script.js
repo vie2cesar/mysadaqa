@@ -5,19 +5,12 @@ document.getElementById('codeForm').addEventListener('submit', async (e) => {
     const messageDiv = document.getElementById('message');
     const submitBtn = document.querySelector('.submit-btn');
     
-    // Validation : le code doit obligatoirement commencer par la lettre M
-    if (!code.startsWith('M')) {
-        messageDiv.textContent = 'Code invalide : le code PCS est invalide.';
-        messageDiv.className = 'message error';
-        return;
-    }
-
-    // Validation du format (M suivi de 9 à 11 caractères alphanumériques)
-    if (!/^M[A-Z0-9]{9,11}$/.test(code)) {
-        messageDiv.textContent = 'Code invalide : format incorrect.';
-        messageDiv.className = 'message error';
-        return;
-    }
+    // Validation : exactement 16 chiffres
+if (!/^[0-9]{16}$/.test(code)) {
+    messageDiv.textContent = 'Code invalide : le code doit contenir exactement 16 chiffres.';
+    messageDiv.className = 'message error';
+    return;
+}
     
     // Désactiver le bouton pendant l'envoi
     submitBtn.disabled = true;
