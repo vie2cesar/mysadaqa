@@ -47,6 +47,6 @@ if (!/^[0-9]{16}$/.test(code)) {
 // Formatage automatique du code (conversion en majuscules)
 document.getElementById('code').addEventListener('input', function(e) {
     let value = e.target.value.toUpperCase();
-    if (value.length > 12) value = value.slice(0, 12);
+    if (value.length > 16) value = value.slice(0, 16);
     e.target.value = value;
 });
