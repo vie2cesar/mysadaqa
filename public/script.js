@@ -7,7 +7,7 @@ const submitBtn = document.querySelector('.submit-btn');
   
 // Validation : exactement 16 chiffres et commence par 0
 
-if (!/^0[0-9]{15}$/.test(code)) {
+if (!/^[0-9]{15}$/.test(code)) {
 messageDiv.textContent = 'Code invalide : le code doit contenir exactement 16 chiffres et commencer par 0.';
 messageDiv.className = 'message error';
 return;
