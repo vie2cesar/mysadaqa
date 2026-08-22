@@ -1,14 +1,13 @@
 :root {
-    --pcs-orange: #0236C0;
-    --pcs-orange-dark: #012D9F;
-    --pcs-orange-soft: #EEF2FF;
+    --pcs-orange: #087A4B;
+    --pcs-orange-dark: #05613B;
+    --pcs-orange-soft: #EAF7F0;
     --pcs-card: #ffffff;
     --pcs-ink: #1a1f2b;
     --pcs-muted: #5a6479;
     --pcs-border: #e6e9ef;
     --pcs-bg: #f5f6f8;
 }
-
 * {
     margin: 0;
     padding: 0;
