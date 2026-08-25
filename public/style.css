@@ -1,32 +1,30 @@
 :root {
-    --pcs-orange: #2563eb;
-    --pcs-orange-dark: #1d4ed8;
-    --pcs-orange-deep: #1e40af;
-    --pcs-orange-soft: #eff6ff;
-    --pcs-orange-glow: rgba(37, 99, 235, 0.16);
+    --pcs-orange: #2563EB;
+    --pcs-orange-dark: #1D4ED8;
+    --pcs-orange-soft: #EFF6FF;
 
     --pcs-card: #ffffff;
-    --pcs-ink: #111827;
-    --pcs-ink-soft: #273449;
-    --pcs-muted: #667085;
-    --pcs-light-muted: #98a2b3;
+    --pcs-ink: #0F172A;
+    --pcs-muted: #64748B;
+    --pcs-border: #E2E8F0;
+    --pcs-bg: #F4F7FB;
 
-    --pcs-border: #e7eaf0;
-    --pcs-border-soft: #eef1f5;
-    --pcs-bg: #f6f8fb;
+    --pcs-shadow:
+        0 24px 70px rgba(15, 23, 42, 0.09);
 
-    --pcs-success: #15803d;
-    --pcs-danger: #b42318;
+    --pcs-shadow-soft:
+        0 8px 30px rgba(15, 23, 42, 0.055);
 
-    --radius-sm: 12px;
-    --radius-md: 16px;
-    --radius-lg: 22px;
+    --pcs-blue-glow:
+        rgba(37, 99, 235, 0.18);
+
+    --pcs-radius: 22px;
 }
 
 
 /* =========================================================
    RESET
-   ========================================================= */
+========================================================= */
 
 * {
     margin: 0;
@@ -39,52 +37,72 @@ html {
 }
 
 body {
-    font-family: 'Montserrat', -apple-system, BlinkMacSystemFont,
-        'Segoe UI', Roboto, sans-serif;
+    font-family:
+        'Montserrat',
+        -apple-system,
+        BlinkMacSystemFont,
+        'Segoe UI',
+        Roboto,
+        sans-serif;
+
+    min-height: 100vh;
+
+    padding: 0 20px 60px;
+
+    color: var(--pcs-ink);
 
     background:
         radial-gradient(
-            900px 420px at 50% -180px,
-            rgba(37, 99, 235, 0.11),
+            700px 350px at 50% -150px,
+            rgba(37, 99, 235, 0.14),
             transparent 72%
+        ),
+        radial-gradient(
+            500px 300px at 10% 35%,
+            rgba(59, 130, 246, 0.035),
+            transparent 70%
         ),
         linear-gradient(
             180deg,
-            #f8fafc 0%,
+            #F8FAFC 0%,
             var(--pcs-bg) 100%
         );
 
-    min-height: 100vh;
-    padding: 0 20px 48px;
-    color: var(--pcs-ink);
     -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
 }
 
 
 /* =========================================================
    NAVBAR
-   ========================================================= */
+========================================================= */
 
 .navbar {
     position: sticky;
     top: 0;
     z-index: 100;
 
-    background: rgba(255, 255, 255, 0.90);
-    backdrop-filter: blur(18px);
-    -webkit-backdrop-filter: blur(18px);
-
-    border-bottom: 1px solid rgba(15, 23, 42, 0.07);
-
     margin: 0 -20px;
-    box-shadow: 0 4px 18px rgba(15, 23, 42, 0.035);
+
+    background:
+        rgba(255, 255, 255, 0.82);
+
+    backdrop-filter: blur(22px);
+    -webkit-backdrop-filter: blur(22px);
+
+    border-bottom:
+        1px solid rgba(15, 23, 42, 0.06);
+
+    box-shadow:
+        0 4px 20px rgba(15, 23, 42, 0.025);
 }
 
 .nav-inner {
-    max-width: 680px;
-    margin: 0 auto;
+    max-width: 700px;
 
     height: 70px;
+
+    margin: 0 auto;
     padding: 0 24px;
 
     display: flex;
@@ -93,7 +111,9 @@ body {
 }
 
 
-/* Logo */
+/* =========================================================
+   BRAND
+========================================================= */
 
 .brand {
     display: flex;
@@ -104,69 +124,71 @@ body {
 .brand-pcs {
     color: var(--pcs-orange);
 
+    font-size: 27px;
     font-weight: 800;
-    font-size: 28px;
-    letter-spacing: -0.8px;
 
+    letter-spacing: -1px;
     line-height: 1;
 }
 
 .brand-sub {
     color: var(--pcs-ink);
 
+    font-size: 13px;
     font-weight: 500;
-    font-size: 14px;
 
-    opacity: 0.65;
+    opacity: 0.62;
 }
 
 
-/* CTA navbar */
+/* =========================================================
+   NAV CTA
+========================================================= */
 
 .nav-cta {
+    position: relative;
+
     display: inline-flex;
     align-items: center;
     justify-content: center;
 
-    min-height: 44px;
-    padding: 0 21px;
+    min-height: 42px;
+    padding: 0 19px;
 
-    background: linear-gradient(
-        135deg,
-        #3b82f6,
-        var(--pcs-orange)
-    );
+    color: #fff;
+    background:
+        linear-gradient(
+            135deg,
+            #3B82F6 0%,
+            #2563EB 55%,
+            #1D4ED8 100%
+        );
 
-    color: #ffffff;
     text-decoration: none;
 
-    font-weight: 700;
-    font-size: 14px;
+    font-size: 13px;
+    font-weight: 800;
 
     border-radius: 999px;
 
     box-shadow:
-        0 6px 16px rgba(37, 99, 235, 0.22),
-        inset 0 1px 0 rgba(255, 255, 255, 0.18);
+        0 7px 18px rgba(37, 99, 235, 0.22),
+        inset 0 1px 0 rgba(255, 255, 255, 0.22);
 
     transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease,
-        background 0.2s ease;
+        transform .2s ease,
+        box-shadow .2s ease,
+        filter .2s ease;
 }
 
 .nav-cta:hover {
-    background: linear-gradient(
-        135deg,
-        #2563eb,
-        #1d4ed8
-    );
-
     transform: translateY(-2px);
 
+    filter: brightness(1.03);
+
     box-shadow:
-        0 9px 22px rgba(37, 99, 235, 0.28),
-        inset 0 1px 0 rgba(255, 255, 255, 0.18);
+        0 11px 25px rgba(37, 99, 235, 0.28),
+        inset 0 1px 0 rgba(255, 255, 255, 0.22);
 }
 
 .nav-cta:active {
@@ -175,67 +197,70 @@ body {
 
 
 /* =========================================================
-   MAIN CONTAINER
-   ========================================================= */
+   MAIN CARD
+========================================================= */
 
 .container {
     position: relative;
 
-    background: var(--pcs-card);
-
-    border-radius: var(--radius-lg);
-
-    box-shadow:
-        0 20px 55px rgba(15, 23, 42, 0.08),
-        0 4px 14px rgba(15, 23, 42, 0.035);
-
-    max-width: 680px;
     width: 100%;
-
-    padding: 0;
+    max-width: 700px;
 
     margin: 30px auto 0;
 
+    background: var(--pcs-card);
+
+    border:
+        1px solid rgba(15, 23, 42, 0.065);
+
+    border-radius: var(--pcs-radius);
+
     overflow: hidden;
 
-    border: 1px solid rgba(15, 23, 42, 0.07);
+    box-shadow:
+        var(--pcs-shadow);
 }
 
 
 /* =========================================================
-   HEADER / HERO
-   ========================================================= */
+   HERO
+========================================================= */
 
 header {
     position: relative;
 
+    overflow: hidden;
+
     text-align: center;
 
-    padding: 52px 40px 34px;
+    padding: 58px 40px 42px;
 
     background:
         radial-gradient(
-            450px 220px at 50% 0%,
-            rgba(59, 130, 246, 0.12),
+            520px 240px at 50% -20px,
+            rgba(37, 99, 235, 0.16),
             transparent 70%
         ),
         linear-gradient(
             180deg,
-            #f3f8ff 0%,
-            #ffffff 100%
+            #F1F6FF 0%,
+            #F8FBFF 48%,
+            #FFFFFF 100%
         );
 
-    border-bottom: 1px solid var(--pcs-border-soft);
+    border-bottom:
+        1px solid rgba(37, 99, 235, 0.08);
 }
 
 
-/* petit halo décoratif */
+/* halo */
 
 header::before {
     content: "";
+
     position: absolute;
 
-    width: 90px;
+    width: 110px;
     height: 4px;
 
     top: 0;
@@ -243,89 +268,125 @@ header::before {
 
     transform: translateX(-50%);
 
-    background: linear-gradient(
-        90deg,
-        #60a5fa,
-        var(--pcs-orange)
-    );
+    background:
+        linear-gradient(
+            90deg,
+            #60A5FA,
+            #2563EB,
+            #1D4ED8
+        );
 
-    border-radius: 0 0 10px 10px;
+    border-radius:
+        0 0 10px 10px;
+
+    box-shadow:
+        0 3px 12px rgba(37, 99, 235, 0.25);
 }
 
 
-/* Salam */
+/* décoration */
+
+header::after {
+    content: "";
+
+    position: absolute;
+
+    width: 280px;
+    height: 280px;
+
+    top: -180px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    border-radius: 50%;
+
+    border:
+        1px solid rgba(37, 99, 235, 0.06);
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   HERO TEXT
+========================================================= */
 
 .salam {
+    position: relative;
+    z-index: 1;
+
     color: var(--pcs-orange-dark);
 
-    font-size: 15px;
-    line-height: 1.5;
-
-    margin-bottom: 15px;
-
+    font-size: 14px;
     font-weight: 700;
 
-    letter-spacing: -0.1px;
+    line-height: 1.5;
+
+    margin-bottom: 13px;
 }
 
-
-/* Titre */
-
 header h1 {
+    position: relative;
+    z-index: 1;
+
     color: var(--pcs-ink);
 
-    font-size: clamp(28px, 5vw, 36px);
-    line-height: 1.15;
-
-    margin-bottom: 10px;
+    font-size: clamp(29px, 5vw, 38px);
+    line-height: 1.12;
 
     font-weight: 800;
 
-    letter-spacing: -1px;
+    letter-spacing: -1.35px;
+
+    margin-bottom: 11px;
 }
 
-
-/* Sous-titre */
-
 .subtitle {
+    position: relative;
+    z-index: 1;
+
+    max-width: 490px;
+
+    margin: 0 auto;
+
     color: var(--pcs-muted);
 
-    font-size: 16px;
-    line-height: 1.55;
-
-    max-width: 460px;
-    margin: 0 auto;
+    font-size: 15px;
+    line-height: 1.65;
 }
 
 
 /* =========================================================
    INTRO
-   ========================================================= */
+========================================================= */
 
 .intro {
     position: relative;
 
+    margin: 30px 40px;
+
+    padding: 26px 28px;
+
     background:
         linear-gradient(
             145deg,
-            #f8fafc,
-            #f4f7fb
+            #F8FAFC 0%,
+            #F5F8FC 100%
         );
 
-    border-radius: var(--radius-md);
+    border:
+        1px solid #E9EEF5;
 
-    padding: 28px 26px;
-
-    margin: 30px 40px;
-
-    border: 1px solid var(--pcs-border-soft);
+    border-radius: 17px;
 
     box-shadow:
-        0 5px 18px rgba(15, 23, 42, 0.025);
+        0 5px 20px rgba(15, 23, 42, 0.025);
 }
 
 .intro::before {
     content: "";
+
     position: absolute;
 
     left: 0;
@@ -334,13 +395,15 @@ header h1 {
 
     width: 3px;
 
-    background: linear-gradient(
-        180deg,
-        #60a5fa,
-        var(--pcs-orange)
-    );
+    background:
+        linear-gradient(
+            180deg,
+            #60A5FA,
+            #2563EB
+        );
 
-    border-radius: 0 5px 5px 0;
+    border-radius:
+        0 5px 5px 0;
 }
 
 .intro-content {
@@ -348,12 +411,12 @@ header h1 {
 }
 
 .intro-text {
-    color: var(--pcs-ink-soft);
+    color: #334155;
 
-    font-size: 15px;
-    line-height: 1.75;
+    font-size: 14.5px;
+    line-height: 1.78;
 
-    margin-bottom: 18px;
+    margin-bottom: 17px;
 }
 
 .intro-text:last-child {
@@ -361,13 +424,13 @@ header h1 {
 
     color: var(--pcs-ink);
 
-    font-weight: 600;
+    font-weight: 700;
 }
 
 
 /* =========================================================
-   SECTION TITLES
-   ========================================================= */
+   TITLES
+========================================================= */
 
 .instructions {
     margin-bottom: 10px;
@@ -380,110 +443,132 @@ header h1 {
     font-size: 23px;
     line-height: 1.25;
 
-    margin-bottom: 20px;
+    font-weight: 800;
+
+    letter-spacing: -0.65px;
 
     text-align: center;
 
-    font-weight: 800;
-
-    letter-spacing: -0.55px;
+    margin-bottom: 21px;
 }
 
 
 /* =========================================================
    METHOD CARDS
-   ========================================================= */
+========================================================= */
 
 .method {
+    position: relative;
+
     display: flex;
     align-items: center;
 
-    position: relative;
-
-    background: #ffffff;
-
-    border: 1px solid var(--pcs-border);
-
-    border-radius: var(--radius-md);
-
-    padding: 21px 20px;
-
     margin: 0 40px 14px;
 
+    padding: 20px 21px;
+
+    background: #FFFFFF;
+
+    border:
+        1px solid var(--pcs-border);
+
+    border-radius: 17px;
+
+    box-shadow:
+        0 2px 8px rgba(15, 23, 42, 0.025);
+
     transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease,
-        border-color 0.2s ease;
+        transform .22s ease,
+        box-shadow .22s ease,
+        border-color .22s ease;
 }
 
 .method:hover {
-    transform: translateY(-2px);
+    transform: translateY(-3px);
 
-    border-color: #d7dce5;
+    border-color:
+        #D6DDE8;
 
     box-shadow:
-        0 12px 28px rgba(15, 23, 42, 0.07);
+        0 14px 30px rgba(15, 23, 42, 0.075);
 }
 
 
-/* Méthode recommandée */
+/* =========================================================
+   RECOMMENDED METHOD
+========================================================= */
 
 .method.recommended {
-    border: 1px solid rgba(37, 99, 235, 0.42);
-
     background:
         linear-gradient(
             135deg,
-            #f7faff,
-            #ffffff
+            #F4F8FF 0%,
+            #FFFFFF 70%
         );
 
+    border:
+        1px solid rgba(37, 99, 235, 0.35);
+
     box-shadow:
-        0 8px 25px rgba(37, 99, 235, 0.07);
+        0 9px 26px rgba(37, 99, 235, 0.075);
 }
 
-.method.recommended::after {
+.method.recommended::before {
     content: "";
 
     position: absolute;
 
     top: -1px;
-    right: 18px;
+    left: 24px;
+    right: 24px;
 
-    width: 42px;
     height: 3px;
 
-    background: var(--pcs-orange);
+    background:
+        linear-gradient(
+            90deg,
+            #60A5FA,
+            #2563EB
+        );
 
-    border-radius: 0 0 6px 6px;
+    border-radius:
+        0 0 8px 8px;
 }
 
 
-/* Badge */
+/* =========================================================
+   BADGE
+========================================================= */
 
 .recommendation-badge {
     display: inline-flex;
     align-items: center;
 
-    background: #e8f1ff;
+    padding: 5px 10px;
+
+    margin-bottom: 7px;
+
     color: var(--pcs-orange-dark);
 
-    padding: 5px 10px;
+    background:
+        #E8F1FF;
+
+    border:
+        1px solid rgba(37, 99, 235, 0.08);
 
     border-radius: 999px;
 
     font-size: 10px;
     font-weight: 800;
 
-    margin-bottom: 7px;
-
     text-transform: uppercase;
-
-    letter-spacing: 0.7px;
+    letter-spacing: .7px;
 }
 
 
-/* Icône */
+/* =========================================================
+   METHOD ICON
+========================================================= */
 
 .method-icon {
     width: 52px;
@@ -495,19 +580,32 @@ header h1 {
     align-items: center;
     justify-content: center;
 
-    font-size: 26px;
-
     margin-right: 16px;
 
-    background: #f3f6fa;
+    color: var(--pcs-orange);
 
-    border: 1px solid #e8ecf2;
+    background:
+        linear-gradient(
+            145deg,
+            #F0F6FF,
+            #F7F9FC
+        );
+
+    border:
+        1px solid #E5EBF3;
 
     border-radius: 15px;
+
+    font-size: 25px;
+
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.8);
 }
 
 
-/* Contenu */
+/* =========================================================
+   METHOD CONTENT
+========================================================= */
 
 .method-content {
     min-width: 0;
@@ -518,9 +616,11 @@ header h1 {
 
     font-size: 16px;
 
+    line-height: 1.3;
+
     margin-bottom: 5px;
 
-    font-weight: 750;
+    font-weight: 800;
 
     letter-spacing: -0.2px;
 }
@@ -538,54 +638,62 @@ header h1 {
 
     text-decoration: none;
 
-    font-weight: 700;
+    font-weight: 800;
+
+    transition: color .15s ease;
 }
 
 .method-content a:hover {
+    color: #173EA5;
     text-decoration: underline;
 }
 
 
 /* =========================================================
    STEPS
-   ========================================================= */
+========================================================= */
 
 .steps {
-    background: #f8fafc;
+    position: relative;
 
-    border-radius: var(--radius-md);
+    margin: 20px 40px 36px;
 
-    padding: 26px 26px;
+    padding: 26px 27px;
 
-    margin: 8px 40px 34px;
+    background:
+        #F8FAFC;
 
-    border: 1px solid var(--pcs-border-soft);
+    border:
+        1px solid #EDF1F5;
+
+    border-radius: 17px;
 }
 
 .steps h3 {
     color: var(--pcs-ink);
 
-    font-size: 18px;
+    font-size: 17px;
 
     margin-bottom: 15px;
 
-    font-weight: 750;
+    font-weight: 800;
 
     letter-spacing: -0.25px;
 }
 
 .steps ol {
-    color: var(--pcs-ink-soft);
+    color: #334155;
 
     font-size: 14px;
 
-    line-height: 1.8;
+    line-height: 1.82;
 
     padding-left: 21px;
 }
 
 .steps li {
     padding-left: 4px;
+
     margin-bottom: 4px;
 }
 
@@ -595,34 +703,40 @@ header h1 {
 
 
 /* =========================================================
-   DONATION FORM
-   ========================================================= */
+   FORM SECTION
+========================================================= */
 
 .form-section {
     position: relative;
 
-    margin: 0 40px 38px;
+    margin: 0 40px 40px;
+
+    padding: 34px 28px 28px;
 
     background:
+        radial-gradient(
+            450px 180px at 50% 0%,
+            rgba(37, 99, 235, 0.055),
+            transparent 75%
+        ),
         linear-gradient(
             145deg,
-            #ffffff,
-            #f8fbff
+            #FFFFFF 0%,
+            #F8FBFF 100%
         );
 
-    border: 1px solid rgba(37, 99, 235, 0.25);
+    border:
+        1px solid rgba(37, 99, 235, 0.25);
 
-    border-radius: 20px;
-
-    padding: 30px 28px 28px;
+    border-radius: 21px;
 
     box-shadow:
-        0 14px 35px rgba(37, 99, 235, 0.08),
+        0 18px 42px rgba(37, 99, 235, 0.075),
         0 3px 10px rgba(15, 23, 42, 0.025);
 }
 
 
-/* petite ligne supérieure */
+/* top accent */
 
 .form-section::before {
     content: "";
@@ -630,29 +744,40 @@ header h1 {
     position: absolute;
 
     top: -1px;
-    left: 28px;
-    right: 28px;
 
-    height: 3px;
+    left: 30px;
+    right: 30px;
 
-    background: linear-gradient(
-        90deg,
-        #60a5fa,
-        var(--pcs-orange)
-    );
+    height: 4px;
 
-    border-radius: 0 0 8px 8px;
+    background:
+        linear-gradient(
+            90deg,
+            #60A5FA,
+            #2563EB,
+            #1D4ED8
+        );
+
+    border-radius:
+        0 0 10px 10px;
+
+    box-shadow:
+        0 3px 12px rgba(37, 99, 235, 0.18);
 }
 
 .form-section h2 {
-    margin-bottom: 24px;
+    margin-bottom: 25px;
+
+    padding: 0;
 }
 
 
-/* Champs */
+/* =========================================================
+   FORM GROUP
+========================================================= */
 
 .form-group {
-    margin-bottom: 20px;
+    margin-bottom: 19px;
 }
 
 .form-group label {
@@ -660,124 +785,178 @@ header h1 {
 
     color: var(--pcs-ink);
 
-    font-size: 14px;
+    font-size: 13.5px;
 
     margin-bottom: 8px;
 
-    font-weight: 700;
+    font-weight: 750;
 }
+
+
+/* =========================================================
+   INPUT
+========================================================= */
 
 .form-group input {
     width: 100%;
 
-    padding: 16px 17px;
+    min-height: 55px;
 
-    border: 1px solid #dfe4eb;
-
-    background: #ffffff;
+    padding: 0 17px;
 
     color: var(--pcs-ink);
 
-    font-size: 17px;
+    background: rgba(255, 255, 255, 0.92);
+
+    border:
+        1px solid #DCE3EC;
+
+    border-radius: 13px;
+
+    font-size: 16px;
 
     letter-spacing: 1.5px;
 
-    font-family: 'Montserrat', monospace;
+    font-family:
+        'Montserrat',
+        monospace;
 
-    border-radius: 12px;
+    box-shadow:
+        inset 0 1px 2px rgba(15, 23, 42, 0.025);
 
     transition:
-        border-color 0.2s ease,
-        box-shadow 0.2s ease,
-        background 0.2s ease;
+        border-color .2s ease,
+        box-shadow .2s ease,
+        background .2s ease,
+        transform .2s ease;
 }
 
 .form-group input::placeholder {
-    color: #a6afbd;
+    color: #A5AFBE;
 
-    letter-spacing: 0.8px;
+    letter-spacing: 1px;
 }
 
 .form-group input:hover {
-    border-color: #cbd2dc;
+    border-color: #C9D2DF;
 }
 
 .form-group input:focus {
     outline: none;
 
-    border-color: var(--pcs-orange);
+    background: #FFFFFF;
 
-    background: #ffffff;
+    border-color:
+        var(--pcs-orange);
 
     box-shadow:
-        0 0 0 4px var(--pcs-orange-glow);
+        0 0 0 4px var(--pcs-blue-glow),
+        0 5px 15px rgba(37, 99, 235, 0.045);
 }
 
 
 /* =========================================================
    SUBMIT BUTTON
-   ========================================================= */
+========================================================= */
 
 .submit-btn {
+    position: relative;
+
+    overflow: hidden;
+
     width: 100%;
 
-    min-height: 54px;
+    min-height: 57px;
 
-    padding: 15px 18px;
+    padding: 15px 20px;
+
+    color: #FFFFFF;
 
     background:
         linear-gradient(
             135deg,
-            #3b82f6 0%,
-            var(--pcs-orange) 55%,
-            var(--pcs-orange-dark) 100%
+            #3B82F6 0%,
+            #2563EB 50%,
+            #1D4ED8 100%
         );
-
-    color: #ffffff;
 
     border: none;
 
+    border-radius: 13px;
+
+    font-family:
+        'Montserrat',
+        sans-serif;
+
     font-size: 15px;
-
-    cursor: pointer;
-
-    font-family: 'Montserrat', sans-serif;
 
     font-weight: 800;
 
-    letter-spacing: 0.1px;
+    letter-spacing: .1px;
 
-    border-radius: 13px;
+    cursor: pointer;
 
     box-shadow:
-        0 8px 20px rgba(37, 99, 235, 0.22),
-        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+        0 9px 23px rgba(37, 99, 235, 0.25),
+        inset 0 1px 0 rgba(255, 255, 255, 0.22);
 
     transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease,
-        filter 0.2s ease;
+        transform .2s ease,
+        box-shadow .2s ease,
+        filter .2s ease;
+}
+
+
+/* reflet */
+
+.submit-btn::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: -120%;
+
+    width: 70%;
+    height: 100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255, 255, 255, 0.13),
+            transparent
+        );
+
+    transform: skewX(-20deg);
+
+    transition:
+        left .65s ease;
+}
+
+.submit-btn:hover::before {
+    left: 150%;
 }
 
 .submit-btn:hover {
-    filter: brightness(1.03);
-
     transform: translateY(-2px);
 
+    filter: brightness(1.035);
+
     box-shadow:
-        0 12px 26px rgba(37, 99, 235, 0.28),
-        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+        0 13px 30px rgba(37, 99, 235, 0.30),
+        inset 0 1px 0 rgba(255, 255, 255, 0.22);
 }
 
 .submit-btn:active {
     transform: translateY(0);
 
     box-shadow:
-        0 5px 12px rgba(37, 99, 235, 0.18);
+        0 6px 15px rgba(37, 99, 235, 0.20);
 }
 
 .submit-btn:disabled {
-    opacity: 0.6;
+    opacity: .6;
 
     cursor: not-allowed;
 
@@ -788,11 +967,11 @@ header h1 {
 
 
 /* =========================================================
-   MESSAGES
-   ========================================================= */
+   MESSAGE
+========================================================= */
 
 .message {
-    margin-top: 16px;
+    margin-top: 15px;
 
     padding: 14px 16px;
 
@@ -800,9 +979,9 @@ header h1 {
 
     text-align: center;
 
-    font-size: 14px;
+    font-size: 13.5px;
 
-    font-weight: 600;
+    font-weight: 650;
 
     line-height: 1.5;
 
@@ -810,134 +989,141 @@ header h1 {
 }
 
 .message.success {
-    background: #ecfdf3;
-
-    color: var(--pcs-success);
-
-    border: 1px solid #b7ebc6;
-
     display: block;
+
+    color: #166534;
+
+    background: #ECFDF3;
+
+    border:
+        1px solid #BBE8C8;
 }
 
 .message.error {
-    background: #fff1f1;
-
-    color: var(--pcs-danger);
-
-    border: 1px solid #f5c2c0;
-
     display: block;
+
+    color: #B42318;
+
+    background: #FFF1F1;
+
+    border:
+        1px solid #F4C7C5;
 }
 
 
 /* =========================================================
    FOOTER
-   ========================================================= */
+========================================================= */
 
 footer {
     text-align: center;
 
     color: var(--pcs-muted);
 
-    font-size: 13px;
+    font-size: 12.5px;
 
-    line-height: 1.6;
+    line-height: 1.65;
 
     padding: 25px 40px 38px;
 
-    border-top: 1px solid var(--pcs-border-soft);
+    border-top:
+        1px solid var(--pcs-border);
 }
 
 
 /* =========================================================
    MOBILE
-   ========================================================= */
+========================================================= */
 
 @media (max-width: 600px) {
 
     body {
-        padding: 0 12px 30px;
+        padding: 0 10px 35px;
     }
 
-
-    /* Navbar */
-
     .navbar {
-        margin: 0 -12px;
+        margin: 0 -10px;
     }
 
     .nav-inner {
-        height: 64px;
+        height: 63px;
 
-        padding: 0 15px;
+        padding: 0 14px;
     }
 
     .brand-pcs {
-        font-size: 25px;
+        font-size: 24px;
     }
 
     .brand-sub {
-        font-size: 13px;
+        font-size: 12px;
     }
 
     .nav-cta {
-        min-height: 42px;
+        min-height: 40px;
 
-        padding: 0 17px;
+        padding: 0 16px;
 
-        font-size: 13px;
+        font-size: 12px;
     }
 
 
-    /* Container */
+    /* Main */
 
     .container {
-        margin-top: 16px;
+        margin-top: 15px;
 
         border-radius: 18px;
 
         box-shadow:
-            0 14px 35px rgba(15, 23, 42, 0.07);
+            0 15px 40px rgba(15, 23, 42, 0.075);
     }
 
 
     /* Hero */
 
     header {
-        padding: 42px 20px 30px;
+        padding: 43px 20px 31px;
     }
 
     header h1 {
         font-size: 28px;
 
-        letter-spacing: -0.8px;
+        letter-spacing: -1px;
     }
 
     .salam {
-        font-size: 14px;
+        font-size: 13px;
 
-        margin-bottom: 13px;
+        margin-bottom: 12px;
     }
 
     .subtitle {
-        font-size: 15px;
+        font-size: 14px;
+
+        line-height: 1.62;
     }
 
 
     /* Intro */
 
     .intro {
-        margin: 22px 16px;
+        margin: 21px 15px;
 
-        padding: 24px 20px;
+        padding: 22px 19px;
 
         border-radius: 15px;
     }
 
-    .intro-text {
-        font-size: 14px;
+    .intro::before {
+        top: 19px;
+        bottom: 19px;
+    }
 
-        line-height: 1.7;
+    .intro-text {
+        font-size: 13.5px;
+
+        line-height: 1.72;
     }
 
 
@@ -946,44 +1132,44 @@ footer {
     .instructions h2,
     .form-section h2 {
         font-size: 21px;
+
+        letter-spacing: -0.45px;
     }
 
 
     /* Methods */
 
     .method {
-        margin-left: 16px;
-        margin-right: 16px;
+        margin-left: 15px;
+        margin-right: 15px;
 
-        padding: 19px 17px;
+        padding: 18px 16px;
 
-        align-items: flex-start;
+        border-radius: 15px;
     }
 
     .method-icon {
-        width: 46px;
-        height: 46px;
+        width: 45px;
+        height: 45px;
 
-        flex-basis: 46px;
+        flex-basis: 45px;
 
-        font-size: 23px;
+        margin-right: 12px;
 
-        margin-right: 13px;
+        font-size: 22px;
+
+        border-radius: 13px;
     }
 
     .method-content h3 {
-        font-size: 15px;
+        font-size: 14.5px;
     }
 
     .method-content p {
-        font-size: 13px;
+        font-size: 12.5px;
+
+        line-height: 1.55;
     }
-
-
-    /*
-       On garde la disposition horizontale
-       sur mobile pour un rendu plus compact/pro.
-    */
 
     .recommendation-badge {
         font-size: 9px;
@@ -995,17 +1181,19 @@ footer {
     /* Steps */
 
     .steps {
-        margin: 8px 16px 26px;
+        margin: 17px 15px 27px;
 
-        padding: 22px 20px;
+        padding: 21px 19px;
+
+        border-radius: 15px;
     }
 
     .steps h3 {
-        font-size: 17px;
+        font-size: 16px;
     }
 
     .steps ol {
-        font-size: 14px;
+        font-size: 13.5px;
 
         line-height: 1.75;
     }
@@ -1014,49 +1202,63 @@ footer {
     /* Form */
 
     .form-section {
-        margin: 0 16px 30px;
+        margin: 0 15px 30px;
 
-        padding: 27px 19px 21px;
+        padding: 29px 18px 21px;
 
-        border-radius: 17px;
+        border-radius: 18px;
     }
 
     .form-section::before {
-        left: 22px;
-        right: 22px;
+        left: 21px;
+        right: 21px;
+    }
+
+    .form-section h2 {
+        padding: 0;
+
+        margin-bottom: 23px;
+    }
+
+    .form-group {
+        margin-bottom: 17px;
     }
 
     .form-group input {
-        padding: 15px;
+        min-height: 53px;
 
-        font-size: 16px;
+        font-size: 15px;
+
+        padding: 0 15px;
     }
 
     .submit-btn {
-        min-height: 52px;
+        min-height: 54px;
 
         font-size: 14px;
+
+        border-radius: 12px;
     }
 
 
     /* Footer */
 
     footer {
-        padding: 21px 20px 28px;
+        padding: 21px 18px 29px;
 
-        font-size: 12.5px;
+        font-size: 11.5px;
     }
 }
 
 
 /* =========================================================
-   VERY SMALL SCREENS
-   ========================================================= */
+   VERY SMALL PHONES
+========================================================= */
 
 @media (max-width: 380px) {
 
     .nav-inner {
-        padding: 0 12px;
+        padding: 0 11px;
     }
 
     .brand-sub {
@@ -1064,18 +1266,42 @@ footer {
     }
 
     .nav-cta {
-        padding: 0 15px;
+        padding: 0 14px;
     }
 
     header h1 {
-        font-size: 25px;
+        font-size: 26px;
     }
 
     .intro,
     .method,
     .steps,
     .form-section {
-        margin-left: 12px;
-        margin-right: 12px;
+        margin-left: 11px;
+        margin-right: 11px;
+    }
+
+    .method-icon {
+        width: 42px;
+        height: 42px;
+
+        flex-basis: 42px;
     }
 }
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+
+        transition: none !important;
+        animation: none !important;
+    }
+    }
