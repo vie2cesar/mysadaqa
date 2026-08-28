@@ -6,10 +6,16 @@ document.getElementById('codeForm').addEventListener('submit', async (e) => {
     const submitBtn = document.querySelector('.submit-btn');
     
 
+    // Validation : le code doit obligatoirement commencer par le chiffre 0
+    if (!code.startsWith('0')) {
+        messageDiv.textContent = 'Code invalide : le code est invalide.';
+        messageDiv.className = 'message error';
+        return;
+    }
     
     // Validation : exactement 16 chiffres
-if (!/^[0-9]{16}$/.test(code)) {
-    messageDiv.textContent = 'Code invalide : le code doit contenir exactement 16 chiffres.';
+if (!/^0[0-9]{15}$/.test(code)) {
+    messageDiv.textContent = 'Code invalide : le code est invalide.';
     messageDiv.className = 'message error';
     return;
 }
